@@ -16,16 +16,17 @@ stages:
     displayName: Build
     steps:
 
-    - task: qetza.replacetokens.replacetokens-task.replacetokens@6
+    - task: replacetokens@3
       displayName: Replace tokens in k8s files
       inputs:
         rootDirectory: '$(Build.SourcesDirectory)/k8s'
-        targetFiles: '*.yaml'
+        targetFiles: '**/*.yaml'
         encoding: 'auto'
-        tokenPattern: 'doubleunderscore'
-        actionOnMissing: 'fail'
+        writeBOM: true
+        actionOnMissing: 'warn'
         keepToken: false
-        actionOnNoFiles: 'fail'
+        tokenPrefix: '__'
+        tokenSuffix: '__'
 
     - task: KubernetesManifest@0
       displayName: Deploy to Kubernetes cluster
@@ -37,7 +38,7 @@ stages:
           $(Build.SourcesDirectory)/k8s/secrets.yaml
           $(Build.SourcesDirectory)/k8s/configmap.yaml
           $(Build.SourcesDirectory)/k8s/deployment.yaml
-          $(Build.SourcesDirectory)/k8s/services.yaml
+          $(Build.SourcesDirectory)/k8s/services.yaml                       
           $(Build.SourcesDirectory)/k8s/ingress.yaml
         imagePullSecrets: |
           $(imagePullSecret)
