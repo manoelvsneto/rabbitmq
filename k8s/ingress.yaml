@@ -23,11 +23,4 @@ spec:
               service:
                 name: rabbitmq-service
                 port:
-                  number: 80
-          - path: /management
-            pathType: Prefix
-            backend:
-              service:
-                name: rabbitmq-service
-                port:
                   number: 15672
