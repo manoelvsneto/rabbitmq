@@ -24,15 +24,9 @@ spec:
           name: management
         env:
         - name: RABBITMQ_DEFAULT_USER
-          valueFrom:
-            secretKeyRef:
-              name: rammitmq-secrets
-              key: RABBITMQ_DEFAULT_USER
+          value: "admin"
         - name: RABBITMQ_DEFAULT_PASS
-          valueFrom:
-            secretKeyRef:
-              name: rammitmq-secrets
-              key: RABBITMQ_DEFAULT_PASS
+          value: "admin123"
         resources:
           requests:
             memory: "256Mi"
