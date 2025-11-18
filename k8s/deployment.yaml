@@ -24,9 +24,9 @@ spec:
           name: management
         env:
         - name: RABBITMQ_DEFAULT_USER
-          value: "admin"
+          value: "__RABBITMQ_DEFAULT_USER__"
         - name: RABBITMQ_DEFAULT_PASS
-          value: "admin123"
+          value: "__RABBITMQ_DEFAULT_USER__"
         resources:
           requests:
             memory: "256Mi"
