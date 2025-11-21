@@ -1,18 +1,12 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: framework-tls
+  name: rabbitmq-tls
   namespace: default
 spec:
-  secretName: framework-tls
+  secretName: rabbitmq-tls
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
     - rabbitmq.archse.eng.br
-    - subwaymap.archse.eng.br
-    - hazelcast.archse.eng.br
-    - framework.archse.eng.br
-    - streamsets.archse.eng.br
-    - docusauros.archse.eng.br
-    - backstage.archse.eng.br

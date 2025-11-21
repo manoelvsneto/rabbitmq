@@ -12,7 +12,7 @@ spec:
   tls:
     - hosts:
         - rabbitmq.archse.eng.br
-      secretName: framework-tls
+      secretName: rabbitmq-tls
   rules:
     - host: rabbitmq.archse.eng.br
       http:
