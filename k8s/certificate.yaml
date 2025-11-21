@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: rabbitmq-tls
   issuerRef:
-    name: letsencrypt-prod
+    name: letsencrypt-rabbitmq-prod
     kind: ClusterIssuer
   dnsNames:
     - rabbitmq.archse.eng.br

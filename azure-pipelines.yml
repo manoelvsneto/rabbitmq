@@ -40,6 +40,7 @@ stages:
           $(Build.SourcesDirectory)/k8s/deployment.yaml
           $(Build.SourcesDirectory)/k8s/services.yaml                       
           $(Build.SourcesDirectory)/k8s/ingress.yaml
+          $(Build.SourcesDirectory)/k8s/cluster-issuer.yaml
         imagePullSecrets: |
           $(imagePullSecret)
         containers: 'rabbitmq:3-management'
