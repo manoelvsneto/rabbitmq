@@ -33,6 +33,7 @@ stages:
       inputs:
         kubernetesServiceConnection: K8SOracleCloud
         action: deploy
+        namespace: 'rabbitmq'
         manifests: |
           $(Build.SourcesDirectory)/k8s/namespace.yaml
           $(Build.SourcesDirectory)/k8s/certificate.yaml
